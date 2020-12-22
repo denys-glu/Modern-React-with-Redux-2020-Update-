@@ -13,7 +13,9 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
         setOpen(false);
       }
     }
+    //creating global event listener, to close dropdown if click was outside the Dropdown component
     document.body.addEventListener('click', bodyClick);
+    //cleaning up after yourself
     return () => {
       document.body.removeEventListener('click', bodyClick);
     }
