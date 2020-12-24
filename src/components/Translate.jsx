@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropdown from './Dropdown';
 import Convert from './Convert';
 
@@ -21,6 +21,12 @@ const Translate = () => {
 
   const [language, setLanguage] = useState(options[0]);
   const [text, setText] = useState("");
+
+  useEffect(()=> {
+    return () => {
+      setText("");
+    }
+  })
   return (
     <div>
       <div className="ui form">
